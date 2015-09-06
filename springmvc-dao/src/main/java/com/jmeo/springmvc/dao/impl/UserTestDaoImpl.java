@@ -2,9 +2,6 @@ package com.jmeo.springmvc.dao.impl;
 
 import com.jmeo.springmvc.dao.UserTestDao;
 import com.jmeo.springmvc.entities.User;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -17,8 +14,6 @@ import java.util.List;
 @Service("userTestDao")
 public class UserTestDaoImpl implements UserTestDao {
 
-    @Autowired
-    SessionFactory sessionFactory;
 
     public User getUserById(int id) {
         return new User(1,"jk1",20);
@@ -35,12 +30,6 @@ public class UserTestDaoImpl implements UserTestDao {
 
     @Transactional
     public boolean addUser(User user){
-
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        session.save(user);
-        session.getTransaction().commit();
-        session.close();
 
         return true;
     }

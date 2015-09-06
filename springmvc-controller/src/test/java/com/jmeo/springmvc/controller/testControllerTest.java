@@ -18,6 +18,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
@@ -45,14 +46,12 @@ public class testControllerTest {
     @Rollback(true)
     public void testRequest() throws Exception{
 
-        MockHttpServletRequestBuilder createMessage = get("/controller/action.do");
+        MockHttpServletRequestBuilder createMessage = get("/controller/ht1.do").param("id","123");
 
 //        MvcResult mvcResult = mockMvc.perform(createMessage).andExpect(status().isOk()).andReturn();
 //        System.out.println(mvcResult.getAsyncResult());
 
-        ResultActions actions = mockMvc.perform(createMessage);
-        actions.andExpect(status().isOk());
-        MvcResult mr = actions.andReturn();
+        MvcResult re = mockMvc.perform(createMessage).andDo(print()).andReturn();
 
 
     }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions />
     <wildcardResourcePatterns>
       <entry name="!?*.java" />
@@ -29,13 +30,13 @@
         <module name="springmvc-webapp" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="springmvc-controller" target="1.5" />
-      <module name="springmvc-dao" target="1.5" />
-      <module name="springmvc-entity" target="1.5" />
-      <module name="springmvc-root" target="1.5" />
-      <module name="springmvc-service" target="1.5" />
-      <module name="springmvc-webapp" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="springmvc-controller" target="1.8" />
+      <module name="springmvc-dao" target="1.8" />
+      <module name="springmvc-entity" target="1.8" />
+      <module name="springmvc-root" target="1.8" />
+      <module name="springmvc-service" target="1.8" />
+      <module name="springmvc-webapp" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -5,6 +5,7 @@ import com.jmeo.springmvc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -22,7 +23,8 @@ public class testController {
 
     @RequestMapping("/action")
     @ResponseBody
-    public List<User> action(){
+    public List<User> action(@RequestParam String id){
+        System.out.println(id);
         List<User> users = userService.getAllUsers();
         if(users!=null){
             System.out.println(" users length is : " + users.size());
@@ -30,6 +32,13 @@ public class testController {
             System.out.println(" users length is : 0 --->");
         }
         return users;
+    }
+
+    @RequestMapping("/ht1")
+    @ResponseBody
+    public String ht1(){
+
+        return "helloworld";
     }
 
 }
