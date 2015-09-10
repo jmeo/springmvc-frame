@@ -41,4 +41,10 @@ public class testController {
         return "helloworld";
     }
 
+    @RequestMapping("/ht2")
+    @ResponseBody
+    public String ht2(){
+        return "this is the ht2 action";
+    }
+
 }
