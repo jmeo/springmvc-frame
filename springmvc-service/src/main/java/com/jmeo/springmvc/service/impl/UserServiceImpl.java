@@ -26,4 +26,8 @@ public class UserServiceImpl implements UserService {
     public boolean addUser(User user) {
         return userTestDao.addUser(user);
     }
+
+    public String getHello() {
+        return "hello";
+    }
 }
