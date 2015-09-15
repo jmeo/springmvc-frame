@@ -28,15 +28,17 @@
         <module name="springmvc-entity" />
         <module name="springmvc-service" />
         <module name="springmvc-webapp" />
+        <module name="springmvc-webservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="springmvc-controller" target="1.8" />
-      <module name="springmvc-dao" target="1.8" />
-      <module name="springmvc-entity" target="1.8" />
-      <module name="springmvc-root" target="1.8" />
-      <module name="springmvc-service" target="1.8" />
-      <module name="springmvc-webapp" target="1.8" />
+      <module name="springmvc-controller" target="1.5" />
+      <module name="springmvc-dao" target="1.5" />
+      <module name="springmvc-entity" target="1.5" />
+      <module name="springmvc-root" target="1.5" />
+      <module name="springmvc-service" target="1.5" />
+      <module name="springmvc-webapp" target="1.5" />
+      <module name="springmvc-webservice" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
