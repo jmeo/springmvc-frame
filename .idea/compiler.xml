@@ -31,7 +31,7 @@
         <module name="springmvc-webservice" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8">
+    <bytecodeTargetLevel target="1.7">
       <module name="springmvc-controller" target="1.5" />
       <module name="springmvc-dao" target="1.5" />
       <module name="springmvc-entity" target="1.5" />
