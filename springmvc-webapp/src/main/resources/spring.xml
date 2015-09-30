@@ -2,9 +2,14 @@
 <!--suppress ALL -->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
                             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+        <import resource="classpath:META-INF/cxf/cxf.xml"/>
+        <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
 
         <context:property-placeholder location="classpath:jdbc.properties"/>
 
@@ -16,5 +21,11 @@
         <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
             <property name="defaultEncoding" value="UTF-8"/>
         </bean>
+
+        <bean id="helloworld" class="com.jmeo.springmvc.webservice.impl.HelloWorldImpl"></bean>
+        <jaxws:endpoint id="helloWorld" implementor="#helloworld" address="/HelloWorld"/>
+
+        <bean id="customer" class="com.jmeo.springmvc.webservice.impl.CustomerServiceImpl"></bean>
+        <jaxws:endpoint id="customerService" implementor="#customer" address="/customer"></jaxws:endpoint>
 
 </beans>
